@@ -44,8 +44,8 @@ export async function getSiteSettings(customerCodeOrPracticeId) {
         const websiteData = await websiteRes.json();
         
         // Build the settings with the practice data we already have
-        const practiceName = practiceData?.name || websiteData?.practice_name || "Lumina Blue";
-        const shortName = practiceData?.short_name || websiteData?.practice_name || "Lumina Blue";
+        const practiceName = practiceData?.name || websiteData?.practice_name || "Your Practice";
+        const shortName = practiceData?.short_name || websiteData?.practice_name || "Your Practice";
         const aboutTextRaw = websiteData?.about?.body || "";
         const aboutText = aboutTextRaw.replace(/<[^>]*>/g, "").trim();
         const bannerImage = websiteData?.banners?.[0]?.img || "/default-banner.jpg";
