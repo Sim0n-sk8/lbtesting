@@ -1,0 +1,63 @@
+.mainContent {
+    @apply bg-white;
+  }
+
+  .contentContainer {
+    @apply max-w-4xl mx-auto p-4 sm:p-6 lg:p-8;
+  }
+
+  .withBanner {
+    @apply -mt-32 relative bg-white rounded-lg shadow-lg;
+  }
+
+  .pageTitle {
+    @apply text-4xl font-bold text-gray-800 mb-6;
+  }
+
+  .contentWrapper {
+    @apply prose max-w-none;
+  }
+
+  .section {
+    @apply mb-8;
+  }
+
+  .sectionTitle {
+    @apply text-2xl font-semibold text-gray-800 mb-4 border-b pb-2;
+  }
+
+  .sectionContent {
+    @apply flex flex-col md:flex-row gap-6;
+  }
+
+  .prose {
+    @apply flex-1;
+  }
+
+  .imageContainer {
+    @apply md:w-1/3;
+  }
+
+  .sectionImage {
+    @apply rounded-lg shadow-md;
+  }
+
+  .errorContainer {
+    @apply min-h-screen flex items-center justify-center bg-gray-50;
+  }
+
+  .errorIcon {
+    @apply text-red-500 text-4xl mb-4;
+  }
+
+  .errorTitle {
+    @apply text-xl font-semibold text-gray-800 mb-2;
+  }
+
+  .errorMessage {
+    @apply text-gray-600 mb-4;
+  }
+
+  .retryButton {
+    @apply px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors;
+  }
