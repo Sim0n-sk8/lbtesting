@@ -12,14 +12,12 @@ export async function generateMetadata({ params }) {
 
   // Fetch category details to get the category name
   let categoryName = 'Info Centre'; // Default category name
-  let categoryDescription = 'Detailed information'; // Default description
   try {
     const categoryResponse = await fetch(`https://www.ocumail.com/api/section_categories/${id}`);
     if (categoryResponse.ok) {
       const currentCategory = await categoryResponse.json();
       if (currentCategory?.name) {
         categoryName = currentCategory.name;
-        categoryDescription = currentCategory.body.replace(/<[^>]*>/g, "").trim();
       }
     }
   } catch (error) {
@@ -28,7 +26,6 @@ export async function generateMetadata({ params }) {
 
   return {
     title: `${categoryName} | ${practiceName}`,
-    description: categoryDescription,
   };
 }
 
