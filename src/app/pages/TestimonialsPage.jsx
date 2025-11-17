@@ -139,7 +139,17 @@ const TestimonialsPage = () => {
         <section ref={containerRef} className="w-full py-20 px-4 bg-gray-50 -mt-48">
           <div className="max-w-7xl mx-auto">
             <div className="relative">
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 min-h-[400px]">
+<div
+  className={
+    // Condition 1: Fewer than 4 reviews (Centered grid with fixed-width columns)
+    allReviews.length < 4
+      ? "grid grid-flow-col auto-cols-[310px] justify-center gap-6 min-h-[400px]"
+      // Condition 2: 4 or more reviews (Full responsive grid structure)
+      : "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 min-h-[400px]"
+  }
+>
+
+
                 {currentReviews.map((review) => (
                   <div key={review.id} className="transition-all duration-500">
                     <ReviewCard
